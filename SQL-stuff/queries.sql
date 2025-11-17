@@ -12,11 +12,11 @@
 --            VALUES('Lachlan', 'Snake', '26/09/2009');
 
 --INSERT INTO Students(firstname, lastname, dob) VALUES
---            ('Bobby', 'Bob', '3/01/2008'),
---            ('Bjorn', 'Johnson', '28/02/2007');
+--           ('Bobby', 'Bob', '3/01/2008'),
+--           ('Bjorn', 'Johnson', '28/02/2007');
 
 --INSERT INTO Students(firstname, lastname, dob) VALUES ('Tabitha', 'Michael', '23/10/2007'), ('Bart', 'Simpson', '25/11/2007'), ('Jennifer', 'Rose', '14/09/2007'), 
---            ('Lequisha', 'Dequavious', '11/10/2007'), ('Jill', 'Bloodbourne', '28/03/2007');
+--           ('Lequisha', 'Dequavious', '11/10/2007'), ('Jill', 'Bloodbourne', '28/03/2007');
 
 --INSERT INTO Marks(student_id, subject, mark) VALUES
 --            (1, 'English', 50),
@@ -84,4 +84,30 @@
 
 --SELECT AVG(mark), subject FROM Marks GROUP BY subject;
 
-SELECT COUNT(lastname), 
+--SELECT COUNT(lastname), lastname FROM Students GROUP BY lastname;
+
+--SELECT MAX(mark), subject FROM Marks GROUP BY subject;
+
+--SELECT COUNT(subject), subject FROM Marks GROUP BY subject;
+
+
+--SELECT Students.firstname, Students.lastname, Marks.subject, Marks.mark 
+--FROM Students JOIN Marks
+--ON Students.id=Marks.student_id; 
+
+--SELECT Students.firstname, Students.lastname, Students.dob,
+--        Marks.subject, Marks.mark
+--FROM Students JOIN Marks
+--ON Students.id=Marks.student_id;
+
+--SELECT Students.firstname, Students.lastname, Students.dob,
+--        Marks.subject, Marks.mark
+--FROM Students JOIN Marks
+--ON Students.id=Marks.student_id
+--WHERE mark >= 50;
+
+SELECT Students.firstname, Students.lastname, Students.dob,
+        Marks.subject, Marks.mark
+FROM Students JOIN Marks
+ON Students.id=Marks.student_id
+WHERE subject LIKE 'English';
